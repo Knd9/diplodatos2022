@@ -17,5 +17,5 @@ En esta oportunidad, exploramos la encuesta Sysarmy a trabajadores en tecnologí
 ### Contenido:
 
 * Parte 1 en Jupyter Notebook, formato ipynb 
-* Parte 2 en Jupyter Notebook, formato ipynb
-* Ejercicio 3 de la parte 2 en formato pdf 
+* Parte 2, ejercicios 1 y 2, Jupyter Notebook, formato ipynb
+* Parte 2, ejercicio 3 en formato pdf 
