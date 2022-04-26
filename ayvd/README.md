@@ -13,3 +13,9 @@
 En camino de adentrarnos a la Ciencia de Datos, dentro de esta materia pudimos ver conceptos y herramientas sobre estadística descriptiva y probabilidad, aplicándolas en una y varias variables aleatorias, de distinto tipo. 
 
 En esta oportunidad, exploramos la encuesta Sysarmy a trabajadores en tecnología de Argentina en el año 2020. Los datos originales se encuentran [aquí](https://sysarmy.com/blog/posts/resultados-de-la-encuesta-de-sueldos-2022-1/).
+
+### Contenido:
+
+* Parte 1 en Jupyter Notebook, formato ipynb 
+* Parte 2 en Jupyter Notebook, formato ipynb
+* Ejercicio 3 de la parte 2 en formato pdf 
