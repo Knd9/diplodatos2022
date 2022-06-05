@@ -19,31 +19,31 @@
 ----
 ## **Índice**
 
-1. [Introducción](#id1)
+1. [Introducción](#1.-Introducción)
 
-2. [Transformaciones Parte 1](#id2)
+2. [Transformaciones Parte 1](#2.-Transformaciones-Parte-1)
 
-    2.1. [Elección de consideración de columnas y su justificación](#id2_1)
+    2.1. [Elección de consideración de columnas y su justificación](#2.1-Elección-de-consideración-de-columnas-y-su-justificación)
 
-    2.2. [Identificación y eliminación de outliers](#id2_2)
+    2.2. [Identificación y eliminación de outliers](#2.2-Identificación-y-eliminación-de-Outliers)
 
-    2.3. [Unión de ambos datasets](#id2_3)
+    2.3. [Unión de ambos datasets](#2.3-Unión-de-ambos-datasets)
 
-3. [Transformaciones Parte 2](#id2)
+3. [Transformaciones Parte 2](#3.-Transformaciones-Parte-2)
 
-    3.1. [Imputación inicial de Datos Faltantes](#id3_1)
+    3.1. [Imputación inicial de Datos Faltantes](#3.1-Imputación-inicial-de-Datos-Faltantes)
 
-    3.2. [Codificación o Encoding](#id3_2)
+    3.2. [Codificación o Encoding](#3.2-Codificación-o-Encoding)
 
-    3.3. [Imputación por KNN](#id3_3)
+    3.3. [Imputación por KNN](#3.3-Imputación-por-KNN)
 
-    3.4. [Reducción de dimensionalidad](#id3_4)
+    3.4. [Reducción de dimensionalidad](#3.4-Reducción-de-dimensionalidad)
 
-    3.5. [Composición del resultado](#id3_5)
+    3.5. [Composición del resultado](#3.5-Composición-del-resultado)
 
 ----
 
-# Introducción<a> name="id1"></a>
+# 1. Introducción
 
 En esta oportunidad, utilizamos el conjunto de datos de [la compentencia Kaggle](https://www.kaggle.com/dansbecker/melbourne-housing-snapshot) sobre estimación de precios de ventas de propiedades en Melbourne, Victoria, Australia, durante 2016 y 2017. Tomamos el conjunto de datos reducido producido por [DanB](https://www.kaggle.com/dansbecker).
 
@@ -61,14 +61,14 @@ El objetivo es estimar con mayor presición el valor del vecindario de cada prop
 
 ---
 
-## Transformaciones Parte 1<a> name="id2"></a>
+## 2. Transformaciones Parte 1
 
-### Elección de consideración de columnas y su justificación<a> name="id2_1"></a>
+### 2.1 Elección de consideración de columnas y su justificación
 
 Para entrar en contexto con el dominio del problema, investigamos sobre Melbourne y encontramos en distintas fuentes ([fuente 1](https://hmong.es/wiki/List_of_Melbourne_suburbs) y [fuente 2](https://es.db-city.com/Australia--Victoria)) que es una de las ciudades, de hecho la capital, dentro de Victoria, uno de los estados de Australia. A su vez encontramos los conceptos de variables como `suburb` -barrio o vecindario-, `city` o `CouncilArea` -municipio-, asociándolos a los que conocemos.
 
 
-  **1.1 Dataset de Ventas**
+  **Dataset de Ventas**
 
   En principio, vimos la descripción de las variables del dataset puesta en [su fuente](https://www.kaggle.com/datasets/anthonypino/melbourne-housing-market) para determinar la elección de su inclusión. De las mismas, distinguimos:
 
@@ -115,7 +115,7 @@ Por otro lado, no tuvimos en cuenta las siguientes variables:
   * Region (`Regionname`): esta variable se eliminó porque tenemos otras columnas mas específicas sobre ubicación.
   * Cantidad de propiedades en el barrio (`Propertycount`): no deberia influir sobre el precio de venta.
 
-**1.2 Dataset de alquileres de AirBnB original**
+**Dataset de alquileres de AirBnB original**
 
 En este caso, visualizamos la descprición de algunas variables de este dataset (ya que no había de todas) en [data dictionary](https://docs.google.com/spreadsheets/d/1iWCNJcSutYqpULSQHlNyGInUvHg2BoUGoNRIGa6Szc4/edit?usp=sharing) de la página http://insideairbnb.com/.
 
@@ -157,7 +157,7 @@ Por otro lado, además no consideramos las siguientes variables:
 * número de habitaciones (`bedrooms`) y número de baños (`badrooms`): Ya estan representadas en el dataset de ventas
 * tipo (`property_type`): Ya estan representada en el dataset de ventas, y si quisieramos unir ambos datasets por tipo, habría que definir una correspondencia con cada tipo de `property_type` (35) con los de `Type` (4), además de asumir algunos valores de correspondencia al no tener total conocimiento de dominio sobre esto.
 
-### Identificación y eliminación de **outliers**<a> name="id2_2"></a>
+### 2.2 Identificación y eliminación de Outliers
 
 **Dataset de Ventas**
 
@@ -172,7 +172,7 @@ La eliminación de las columnas indicadas y algunos outliers está contemplada e
 
 En este caso no eliminamos outliers pues este dataset lo usamos para agregar información adicional al dataset de ventas, y al agregar pocas variables, teniendo en cuenta que intentamos no abusar de la eliminación de datos, no vimos necesario hacerlo.
 
-### Unión de ambos datasets<a> name="id2_3"></a>
+### 2.3 Unión de ambos datasets
 
 La unión la hicimos, al igual que en clase, mediante la columna de **código postal**, `Postcode` en dataset de ventas y `zipcode` en el dataset de alquileres.
 
@@ -182,17 +182,17 @@ La unión la hicimos, al igual que en clase, mediante la columna de **código po
 
  3. Creamos un archivo CSV a partir del dataframe **merged_sales_df** para que pueda utilizarse posteriormente.
 
-## Transformaciones Parte 2<a> name="id3"></a>
+## 3. Transformaciones Parte 2
 
 Cargamos el CSV del ejercicio 3 de la parte 1 https://drive.google.com/file/d/1AS31HdyAsw09suLoHlScD8j9XR0o-FhS/view?usp=sharing en el dataframe **melb_df**
 
-### Imputación inicial de Datos Faltantes<a> name="id3_1"></a>
+### 3.1 Imputación inicial de Datos Faltantes
 
  1. Imputamos los valores faltantes de la columna `CouncilArea` (1275 valores nulos). Para cada CouncilArea nula, se asignó la CouncilArea de los suburbios con CouncilArea no nula que tienen igual Postcode que los suburbios con CouncilArea nula. Luego de esta imputación, quedaron dos registros sin CouncilArea, para los cuales, encontramos en internet la CouncilArea según los suburbios de los mismos (Wallan [link text](https://en.wikipedia.org/wiki/Wallan) y [Monbulk](https://en.wikipedia.org/wiki/Monbulk,_Victoria)).
 
  2. Imputamos los valores nulos de precio diario promedio `price_avg`, mínimo (`price_min`) y máximo (`price_max`) de alquiler. Calculamos el precio promedio, precio mínimo y precio máximo del **DataSet**, y asignamos estos valores a los valores nulos de estas tres columnas.
 
-### Codificación o Encoding<a> name="id3_2"></a>
+### 3.2 Codificación o Encoding
 
 Creamos el dataframe **melb_reduced_df** como una copia de **melb_df**. Eliminamos las columnas `BuildingArea` y `YearBuilt` del dataframe.
 
@@ -204,7 +204,7 @@ La matriz resultante tiene un tamaño de 11418 filas y 346 columnas
 
 Finalmente usamos **numpy.hstack** para unir los datos resultante de la codificación y el resto de la columnas numéricas. Copiamos los datos resultantes en **melb_reduced_df**
 
-### Imputación por KNN<a> name="id3_3"></a>
+### 3.3 Imputación por KNN
 
 Agregamos con **numpy.hstack** las columnas `BuildingArea` y `YearBuilt` que habian sido eliminadas, agregando los nombres de las columnas en la lista new_columns y graficamos la cantidad de datos faltantes con **msno.matrix** y sus distribuciones con **sns.distplot**. Utilizamos dos métodos de imputación, para completar esas dos columnas:
 
@@ -217,7 +217,7 @@ Agregamos con **numpy.hstack** las columnas `BuildingArea` y `YearBuilt` que hab
 
 
 
-## Reducción de dimensionalidad con PCA
+## 3.4 Reducción de dimensionalidad con PCA
 
 1. Importamos las librerias correspondientes (`sklearn`, importando `PCA`).
 Trabajamos con la matriz obtenida tras aplicar imputación por KNN, **melb_data_mice_knn**, que tiene 361 columnas y 11418 entradas.
@@ -240,7 +240,6 @@ Trabajamos con la matriz obtenida tras aplicar imputación por KNN, **melb_data_
 
 10.  Se analizan el comportamiento de todas las variables considerdas en el punto 9 y se interpreta el resultado.
 
-
-### Composición del resultado<a> name="id3_5"></a>
+### 3.5 Composición del resultado
 
 Finalmente generamos el archivo **data_frame_EyCD_Parte_2.csv** a partir del último dataframa **melb_df**.
