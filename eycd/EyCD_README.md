@@ -19,27 +19,27 @@
 ----
 ## **Índice**
 
-1. [Introducción](#1.-Introducción)
+1. [Introducción](#1-Introducción)
 
-2. [Transformaciones Parte 1](#2.-Transformaciones-Parte-1)
+2. [Transformaciones Parte 1](#2-Transformaciones-Parte-1)
 
-    2.1. [Elección de consideración de columnas y su justificación](#2.1-Elección-de-consideración-de-columnas-y-su-justificación)
+    2.1. [Elección de consideración de columnas y su justificación](#21-Elección-de-consideración-de-columnas-y-su-justificación)
 
-    2.2. [Identificación y eliminación de outliers](#2.2-Identificación-y-eliminación-de-Outliers)
+    2.2. [Identificación y eliminación de outliers](#22-Identificación-y-eliminación-de-Outliers)
 
-    2.3. [Unión de ambos datasets](#2.3-Unión-de-ambos-datasets)
+    2.3. [Unión de ambos datasets](#23-Unión-de-ambos-datasets)
 
-3. [Transformaciones Parte 2](#3.-Transformaciones-Parte-2)
+3. [Transformaciones Parte 2](#3-Transformaciones-Parte-2)
 
-    3.1. [Imputación inicial de Datos Faltantes](#3.1-Imputación-inicial-de-Datos-Faltantes)
+    3.1. [Imputación inicial de Datos Faltantes](#31-Imputación-inicial-de-Datos-Faltantes)
 
-    3.2. [Codificación o Encoding](#3.2-Codificación-o-Encoding)
+    3.2. [Codificación o Encoding](#32-Codificación-o-Encoding)
 
-    3.3. [Imputación por KNN](#3.3-Imputación-por-KNN)
+    3.3. [Imputación por KNN](#33-Imputación-por-KNN)
 
-    3.4. [Reducción de dimensionalidad](#3.4-Reducción-de-dimensionalidad)
+    3.4. [Reducción de dimensionalidad](#34-Reducción-de-dimensionalidad)
 
-    3.5. [Composición del resultado](#3.5-Composición-del-resultado)
+    3.5. [Composición del resultado](#35-Composición-del-resultado)
 
 ----
 
