@@ -217,7 +217,7 @@ Agregamos con **numpy.hstack** las columnas `BuildingArea` y `YearBuilt` que hab
 
 
 
-## 3.4 Reducción de dimensionalidad con PCA
+### 3.4 Reducción de dimensionalidad con PCA
 
 1. Importamos las librerias correspondientes (`sklearn`, importando `PCA`).
 Trabajamos con la matriz obtenida tras aplicar imputación por KNN, **melb_data_mice_knn**, que tiene 361 columnas y 11418 entradas.
