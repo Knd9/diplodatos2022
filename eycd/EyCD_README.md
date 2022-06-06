@@ -204,17 +204,16 @@ La matriz resultante tiene un tamaño de 11418 filas y 346 columnas
 
 Finalmente usamos **numpy.hstack** para unir los datos resultante de la codificación y el resto de la columnas numéricas. Copiamos los datos resultantes en **melb_reduced_df**
 
+
 ### 3.3 Imputación por KNN
 
-Agregamos con **numpy.hstack** las columnas `BuildingArea` y `YearBuilt` que habian sido eliminadas, agregando los nombres de las columnas en la lista new_columns y graficamos la cantidad de datos faltantes con **msno.matrix** y sus distribuciones con **sns.distplot**. Utilizamos dos métodos de imputación, para completar esas dos columnas:
+Agregamos con **numpy.hstack** las columnas `BuildingArea` y `YearBuilt` que habian sido eliminadas, agregando los nombres de las columnas en la lista new_columns y graficamos la cantidad de datos faltantes con **msno.matrix** y sus distribuciones con **sns.kdeplot**. Utilizamos dos dataset distintos en cantidad de columnas para entrenar el modelo de imputación, los cuales fueron escalados y estandarizados con **StandardScaler**, para completar esas dos columnas con datos faltantes:
 
+ 1. Imputación Múltiple usando método **IterativeImputer** con el estimador **KNeighborsRegressor** entrenado solamente con YearBuilt y BuildingArea; graficamos sus distribuciones con **sns.kdeplot**.
 
- 1. Imputacion Multiple usando método **IterativeImputer** con el estimador **KNeighborsRegressor**; graficamos sus distribuciones con **sns.distplot**.
+ 2. Imputación Múltiple usando método **IterativeImputer** con el estimador **KNeighborsRegressor** entrenando con todas las columnas posibles; graficamos sus distribuciones con **sns.kdeplot**.
 
- 2. Imputacion KNN usando método **KNNImputer**; graficamos sus distribuciones con **sns.distplot**.
-
- En ambos casos se observó que el dataframe resultante no posee nulos en ambas columnas
-
+ Se agregó al dataset original las columnas inputadas con el modelo entrenado por la máxima cantidad de columnas.
 
 
 ### 3.4 Reducción de dimensionalidad con PCA
