@@ -235,9 +235,9 @@ Trabajamos con la matriz obtenida tras aplicar imputación por KNN, **melb_data_
 
 8.  Se agrega al dataset inicial **melb_data_mice_knn** tres columnas correspondientes a las: componente_1, componente_2 y Type.
 
-9. Se grafican las componentes pc1 versus pc2 teniendo en cuenta una tercera columna en codigo de color, con el objetivo de ver si se desprenden comportamientos o aglomerados. Estas columnas son: Type, Price, YearBuilt, Landsize y Rooms. Se analizan el comportamiento con vada variable individualmente.
+9. Se grafican las componentes pc1 versus pc2 teniendo en cuenta una tercera columna en codigo de color, con el objetivo de ver si se desprenden comportamientos o aglomerados. Estas columnas son: Type, Price, YearBuilt, Landsize y Rooms. Se analiza el comportamiento con cada variable individualmente.
 
-10.  Se analizan el comportamiento de todas las variables considerdas en el punto 9 y se interpreta el resultado.
+10.  Se analiza el comportamiento de todas las variables considerdas en el punto 9 y se interpreta el resultado.
 
 ### 3.5 Composición del resultado
 
