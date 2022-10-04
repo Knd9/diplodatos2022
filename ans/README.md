@@ -20,7 +20,7 @@ Utilizamos modelos de la librería de *sklearn.cluster*, en particular KMeans y 
 
 Asimismo usamos los métodos de reducción de dimensionalidad, como PCA y tSNE para facilitar la visualización de posibles clusters, en ocasiones coloreando con variables categóricas para ubicar a grandes rasgos lo que hay en cada uno.
 
-Usamos también gráficos 2D y 3D para poder visualizar y evaluar los resultados de las técnicas aplicadas.
+Usamos también gráficos 2D y 3D dinámicos para poder visualizar y evaluar los resultados de las técnicas aplicadas.
 
 ### Contenido:
 
