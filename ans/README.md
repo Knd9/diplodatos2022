@@ -16,9 +16,11 @@ En esta oportunidad trabajamos la base de datos de el juego [FIFA 2022](https://
 
 Aplicamos técnicas ya conocidas y utilizadas en materias anteriores, como codificación e imputación, métodos de visualización para encontrar posibles correlaciones y simplificar el análisis considerando solamente las variables más representativas.
 
-Utilizamos modelos de la librería de *sklearn.cluster*, en particular KMeans y DBScan, evaluando con la métrica del coeficiente de silhouette, el método del codo y KNN para ayudar a encontrar los hiperparámetros más adecuados.
+Utilizamos modelos de la librería de *sklearn.cluster*, en particular KMeans y DBScan, calculando la métrica del coeficiente de silhouette y visualizando con gráficos del método del codo, silhouette y KNN para ayudar a encontrar los hiperparámetros más adecuados.
 
-Asimismo usamos los métodos de reducción de dimensionalidad, como PCA y tSNE para facilitar la visualización de posibles clusters, en ocasiones colorenado con variables categóricas para ubicar a grandes rasgos lo que hay en cada uno.
+Asimismo usamos los métodos de reducción de dimensionalidad, como PCA y tSNE para facilitar la visualización de posibles clusters, en ocasiones coloreando con variables categóricas para ubicar a grandes rasgos lo que hay en cada uno.
+
+Usamos gráficos 2D y 3D para poder visualizar los resultados de las técnicas aplicadas.
 
 ### Contenido:
 
